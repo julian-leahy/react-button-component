@@ -1,9 +1,9 @@
 import React from 'react';
 import './button.styles.scss';
 
-const Button = ({ children, type = 'button', theme }) => {
+const Button = ({ children, theme, ...rest }) => {
     return (
-        <button type={type} className={`btn btn__${theme}`}>
+        <button type={type} className={`btn btn__${theme}`} {...rest} >
             {children}
         </button>
     )
