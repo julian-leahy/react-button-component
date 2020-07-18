@@ -1,0 +1,31 @@
+$primary: #007bff;
+$dark: #343a40;
+$danger: #dc3545;
+@mixin btnCols($bg, $col) {
+    color: $col;
+    background-color: $bg;
+    border-color: $bg;
+    &:hover {
+        background: lighten($bg, 5);
+        border-color: lighten($bg, 5);
+    }
+}
+
+.btn {
+    font-size: .8rem;
+    padding: .6rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    border-radius: 5px;
+    transition: all .3s ease;
+    cursor: pointer;
+    &__dark {
+        @include btnCols($dark, white);
+    }
+    &__primary {
+        @include btnCols($primary, white);
+    }
+    &__danger {
+        @include btnCols($danger, white);
+    }
+}
